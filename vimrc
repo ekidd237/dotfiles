@@ -121,6 +121,8 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
 
+" Ctrlp mappings
+let g:ctrlp_map = '<c-f>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
