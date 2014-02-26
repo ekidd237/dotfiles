@@ -23,4 +23,4 @@ export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '''
 #export PS3="\{$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
 
 alias la='ls -la --color'
-
+alias sc='screen -D -RR'
