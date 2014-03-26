@@ -30,6 +30,7 @@ Bundle 'gmarik/vundle'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/Raimondi/delimitMate'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
+Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,6 +141,11 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 set nobackup
 set nowb
 set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NerdCommenter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper Functions
