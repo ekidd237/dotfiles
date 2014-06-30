@@ -132,7 +132,14 @@ let g:ctrlp_map = '<c-f>'
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=
+set statusline+=%1*\[%n]                                  "buffernr
+set statusline+=%2*\ %<%F\                                "File+path
+set statusline+=%3*\ %y\                                  "FileType
+set statusline+=%4*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+set statusline+=%5*\ col:%03c\                            "Colnr
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files

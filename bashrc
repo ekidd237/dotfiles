@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-      . /etc/bashrc
+          . /etc/bashrc
 fi
 
 # git completion
@@ -19,8 +19,12 @@ function parse_git_branch {
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '''
 
 #user specific aliases and functions
-
-#export PS3="\{$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
-
 alias la='ls -la --color'
 alias sc='screen -D -RR'
+
+#git aliases
+alias gs="git status"
+alias gc="git commit"
+alias gr="git checkout"
+alias ga="git add"
+alias gl="git lola"
