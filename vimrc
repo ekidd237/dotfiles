@@ -97,7 +97,9 @@ set tabstop=4"
 
 set ai "Auto indent
 set si "Smart indent
-"set wrap "Wrap lines
+
+"delete trailing whitespace
+map <leader>ws :%s/\s\+$// 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving Around, Tabs and Buffers

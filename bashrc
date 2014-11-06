@@ -18,9 +18,16 @@ function parse_git_branch {
 }
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '''
 
+#history
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+
 #user specific aliases and functions
-alias la='ls -la --color'
+alias ls='ls -F --color=auto'
+alias la='ls -lah --color'
 alias sc='screen -D -RR'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 #git aliases
 alias gs="git status"
@@ -28,3 +35,6 @@ alias gc="git commit"
 alias gr="git checkout"
 alias ga="git add"
 alias gl="git lola"
+
+# php style fixer
+alias phpfix="php /usr/local/bin/php-cs-fixer fix"
