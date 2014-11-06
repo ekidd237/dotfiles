@@ -17,8 +17,8 @@
 " => Package Managment
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle package manager
-set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
 
 " CtrlP package
 set runtimepath^=~/.vim/bundle/ctrlp.vim
