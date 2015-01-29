@@ -48,16 +48,20 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file 
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
-
+" PHP Syntax Check
+map <C-B> :!php -l %<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+
+" Set 256 color mode 
+if &term == "xterm"
+    set t_Co=256
+endif
+
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 

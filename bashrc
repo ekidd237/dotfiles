@@ -38,3 +38,4 @@ alias gl="git lola"
 
 # php style fixer
 alias phpfix="php /usr/local/bin/php-cs-fixer fix"
+alias worker="/usr/bin/php /home/eschmidt/gearman-workers/opt/css/gearman_workers/report/worker"
