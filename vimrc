@@ -31,6 +31,8 @@ Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/Raimondi/delimitMate'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
+Bundle 'git://github.com/joonty/vdebug'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -62,6 +64,11 @@ if &term == "xterm"
 endif
 
 let g:solarized_termcolors=256
+let g:solarized_termtrans = 0
+let g:solarized_degrade = 1 
+let g:solarized_bold = 1 
+let g:solarized_underline = 1 
+let g:solarized_italic = 1 
 set background=dark
 colorscheme solarized
 
