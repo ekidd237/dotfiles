@@ -16,6 +16,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Package Managment
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+"
 " Vundle package manager
 set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
@@ -30,9 +33,11 @@ Bundle 'gmarik/vundle'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/Raimondi/delimitMate'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
-Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/joonty/vdebug'
+Bundle 'git://github.com/scrooloose/nerdtree'
 
+call vundle#end()            " required
+filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,6 +57,7 @@ nmap <leader>w :w!<cr>
 
 " PHP Syntax Check
 map <C-B> :!php -l %<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +99,8 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
+" Show line numbers
+set number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,7 +144,15 @@ map <leader>tm :tabmove
 map <leader>t<leader> :tabnext 
 
 " Ctrlp mappings
-let g:ctrlp_map = '<c-f>'
+let g:ctrlp_map = '<c-p>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowBookmarks=1
+map <C-f> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
@@ -161,11 +177,6 @@ set statusline+=%5*\ col:%03c\                            "Colnr
 set nobackup
 set nowb
 set noswapfile
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NerdCommenter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper Functions
