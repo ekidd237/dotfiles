@@ -35,6 +35,7 @@ Bundle 'git://github.com/Raimondi/delimitMate'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/joonty/vdebug'
 Bundle 'git://github.com/scrooloose/nerdtree'
+Bundle 'git://github.com/vim-perl/vim-perl'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
