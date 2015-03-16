@@ -36,6 +36,8 @@ Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/joonty/vdebug'
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
+Bundle 'git://github.com/shawncplus/phpcomplete.vim'
+Bundle 'git://github.com/ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -146,6 +148,9 @@ map <leader>t<leader> :tabnext
 
 " Ctrlp mappings
 let g:ctrlp_map = '<c-p>'
+ 
+"open tag in new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
@@ -162,7 +167,6 @@ map <C-f> :NERDTreeToggle<CR>
 set laststatus=2
 
 " Format the status line
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 set statusline=
 set statusline+=%1*\[%n]                                  "buffernr
 set statusline+=%2*\ %<%F\                                "File+path
