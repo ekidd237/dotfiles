@@ -16,18 +16,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Package Managment
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
-"
-" Vundle package manager
+" Vundle plugin manager
+set nocompatible              
+filetype off                  
 set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
-
-" CtrlP package
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+call vundle#begin()
 
 " GitHub repos
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
@@ -38,9 +31,14 @@ Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
 Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
+Bundle 'beyondwords/vim-twig'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()           
+filetype plugin indent on 
+
+" CtrlP package
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,6 +147,9 @@ map <leader>t<leader> :tabnext
 " Ctrlp mappings
 let g:ctrlp_map = '<c-p>'
  
+set tags=tags.tags
+nmap <silent> <F4> :call CreateTags()<CR><CR>
+
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -192,4 +193,8 @@ function! HasPaste()
         return 'PASTE MODE  '
     en
     return ''
+endfunction
+
+function CreateTags()
+    exec ':!ctags -R -f tags.tags --fields=+aimS --languages=php'
 endfunction

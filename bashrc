@@ -38,4 +38,23 @@ alias gl="git lola"
 
 # php style fixer
 alias phpfix="php /usr/local/bin/php-cs-fixer fix"
-alias worker="/usr/bin/php /home/eschmidt/gearman-workers/opt/css/gearman_workers/report/worker"
+
+
+# dev-link and composer stuff
+alias devlink="sudo dev-link;
+                cd /var/web/core;
+                sudo composer update && sudo composer dump-autoload -o;
+                cd -"
+
+# start report worker               
+alias report_worker="/home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/report/worker"
+
+# start process runner orchestrator
+alias process_runner_orchestrator="/usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner_orchestrator/worker"
+
+# start process runner worker
+alias process_runner_workers="echo {1..20} | xargs -n1 echo | xargs -I'{}' -P10 /usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner/worker"
+
+# view apache logs
+alias apachelog="clear;
+                sudo tail -20 /var/log/httpd/error_ssl.log"
