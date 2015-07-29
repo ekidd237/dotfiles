@@ -31,6 +31,7 @@ Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
 Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
+Bundle 'git://github.com/wookiehangover/jshint.vim'
 Bundle 'beyondwords/vim-twig'
 
 call vundle#end()           
@@ -79,6 +80,7 @@ let g:solarized_italic = 1
 set background=dark
 colorscheme solarized
 
+set colorcolumn=120
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,7 +108,7 @@ set number
 " => Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+set expandtab                                                                
 
 " Be smart when using tabs ;)
 set smarttab

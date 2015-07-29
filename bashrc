@@ -55,6 +55,17 @@ alias process_runner_orchestrator="/usr/bin/php /home/eschmidt/repos/gearman_wor
 # start process runner worker
 alias process_runner_workers="echo {1..20} | xargs -n1 echo | xargs -I'{}' -P10 /usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner/worker"
 
+# stop apache
+alias apachestop="sudo /etc/init.d/httpd stop"
+
+# start apache
+alias apachestart="sudo /etc/init.d/httpd start"
+
+# etl app start
+alias etlappstart="sudo ./bin/app.pl --port 80"
+
+# etl workers
+alias etl_worker="./bin/gearman-workers -f"
 # view apache logs
 alias apachelog="clear;
                 sudo tail -20 /var/log/httpd/error_ssl.log"
