@@ -16,6 +16,7 @@ function parse_git_dirty {
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
+
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '''
 
 #history
@@ -65,7 +66,19 @@ alias apachestart="sudo /etc/init.d/httpd start"
 alias etlappstart="sudo ./bin/app.pl --port 80"
 
 # etl workers
-alias etl_worker="./bin/gearman-workers -f"
+alias etlworker="./bin/gearman-workers -f"
 # view apache logs
 alias apachelog="clear;
                 sudo tail -20 /var/log/httpd/error_ssl.log"
+
+# unit testing
+alias test="phpunit -c unittests/phpunit.xml unittests/"
+
+# powerline
+if [ -d "$HOME/.local/bin" ]; then
+        PATH="$HOME/.local/bin:$PATH"
+fi
+
+#export POWERLINE_COMMAND=powerline
+#source /home/eschmidt/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
+

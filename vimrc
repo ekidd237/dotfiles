@@ -31,7 +31,6 @@ Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
 Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
-Bundle 'git://github.com/wookiehangover/jshint.vim'
 Bundle 'beyondwords/vim-twig'
 
 call vundle#end()           
@@ -58,7 +57,10 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " PHP Syntax Check
-map <C-B> :!php -l %<CR>
+map <C-t> :!php -l %<CR>
+
+" Active directory expansion
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -120,6 +122,9 @@ set tabstop=4"
 set ai "Auto indent
 set si "Smart indent
 
+" Set paste toggle
+set pastetoggle=<F2>
+
 "delete trailing whitespace
 map <leader>ws :%s/\s\+$// 
 
@@ -169,13 +174,17 @@ map <C-f> :NERDTreeToggle<CR>
 " Always show the status line
 set laststatus=2
 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 " Format the status line
-set statusline=
-set statusline+=%1*\[%n]                                  "buffernr
-set statusline+=%2*\ %<%F\                                "File+path
-set statusline+=%3*\ %y\                                  "FileType
-set statusline+=%4*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=%5*\ col:%03c\                            "Colnr
+"set statusline=
+"set statusline+=%1*\[%n]                                  "buffernr
+"set statusline+=%2*\ %<%F\                                "File+path
+"set statusline+=%3*\ %y\                                  "FileType
+"set statusline+=%4*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%5*\ col:%03c\                            "Colnr
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
