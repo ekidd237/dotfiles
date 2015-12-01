@@ -67,12 +67,17 @@ alias etlappstart="sudo ./bin/app.pl --port 80"
 
 # etl workers
 alias etlworker="./bin/gearman-workers -f"
+
+# etl test config
+alias testconfig="./bin/testconfig  -f "
+
 # view apache logs
 alias apachelog="clear;
                 sudo tail -20 /var/log/httpd/error_ssl.log"
 
 # unit testing
-alias test="phpunit -c unittests/phpunit.xml unittests/"
+alias test="phpunit --coverage-text --colors -c unittests/phpunit.xml unittests/"
+alias test_html="phpunit --coverage-html ~/repos/coverage -c unittests/phpunit.xml unittests/"
 
 # powerline
 if [ -d "$HOME/.local/bin" ]; then

@@ -160,6 +160,9 @@ nmap <silent> <F4> :call CreateTags()<CR><CR>
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+"active directory
+cnoremap < expr > %%     getcmdtype() = = ':' ? expand('%: h').'/' : ''
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
