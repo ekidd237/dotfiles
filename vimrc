@@ -10,6 +10,7 @@
 "   -> Moving Around, Tabs and Buffers.
 "   -> Status Line
 "   -> Files
+"   -> Substitution / Searching
 "   -> Helper Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -31,19 +32,23 @@ Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
 Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
+Bundle 'git://github.com/nelstrom/vim-visual-star-search'
 Bundle 'beyondwords/vim-twig'
 
 call vundle#end()           
 filetype plugin indent on 
 
 " CtrlP package
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim,~/repos
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
+
+" Set path to repos
+set path+=~/repos/**
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -53,14 +58,6 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" PHP Syntax Check
-map <C-t> :!php -l %<CR>
-
-" Active directory expansion
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -106,6 +103,7 @@ set mat=2
 
 " Show line numbers
 set number
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,7 +159,7 @@ nmap <silent> <F4> :call CreateTags()<CR><CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 "active directory
-cnoremap < expr > %%     getcmdtype() = = ':' ? expand('%: h').'/' : ''
+"cnoremap < expr > %%     getcmdtype() = = ':' ? expand('%: h').'/' : ''
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
@@ -181,15 +179,6 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
-" Format the status line
-"set statusline=
-"set statusline+=%1*\[%n]                                  "buffernr
-"set statusline+=%2*\ %<%F\                                "File+path
-"set statusline+=%3*\ %y\                                  "FileType
-"set statusline+=%4*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-"set statusline+=%5*\ col:%03c\                            "Colnr
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -197,6 +186,22 @@ python del powerline_setup
 set nobackup
 set nowb
 set noswapfile
+
+" Active directory expansion
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" PHP Syntax Check
+map <C-s> :!php -l %<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Substitution / Searching
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Repeat last substitution and last substitution flags
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper Functions

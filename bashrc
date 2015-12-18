@@ -87,3 +87,9 @@ fi
 #export POWERLINE_COMMAND=powerline
 #source /home/eschmidt/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
 
+
+PATH="/home/eschmidt/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/eschmidt/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/eschmidt/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/eschmidt/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/eschmidt/perl5"; export PERL_MM_OPT;
