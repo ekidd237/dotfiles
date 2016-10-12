@@ -40,7 +40,6 @@ alias gl="git lola"
 # php style fixer
 alias phpfix="php /usr/local/bin/php-cs-fixer fix"
 
-
 # dev-link and composer stuff
 alias devlink="sudo dev-link;
                 cd /var/web/core;
@@ -51,10 +50,10 @@ alias devlink="sudo dev-link;
 alias report_worker="/home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/report/worker"
 
 # start process runner orchestrator
-alias process_runner_orchestrator="/usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner_orchestrator/worker"
+alias process_runner_orchestrator="/usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner_orchestrator/mtmpath/worker"
 
 # start process runner worker
-alias process_runner_workers="echo {1..20} | xargs -n1 echo | xargs -I'{}' -P10 /usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner/worker"
+alias process_runner_workers="echo {1..20} | xargs -n1 echo | xargs -I'{}' -P10 /usr/bin/php /home/eschmidt/repos/gearman_workers/opt/css/gearman_workers/process_runner/mtmpath/worker"
 
 # stop apache
 alias apachestop="sudo /etc/init.d/httpd stop"
@@ -83,9 +82,6 @@ alias test_html="phpunit --coverage-html ~/repos/coverage -c unittests/phpunit.x
 if [ -d "$HOME/.local/bin" ]; then
         PATH="$HOME/.local/bin:$PATH"
 fi
-
-#export POWERLINE_COMMAND=powerline
-#source /home/eschmidt/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
 
 
 PATH="/home/eschmidt/perl5/bin${PATH+:}${PATH}"; export PATH;

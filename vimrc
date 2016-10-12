@@ -32,7 +32,8 @@ Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/vim-perl/vim-perl'
 Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
-Bundle 'git://github.com/nelstrom/vim-visual-star-search'
+Bundle 'git://github.com/scrooloose/nerdcommenter'
+Bundle 'git://github.com/joonty/vim-phpqa'
 Bundle 'beyondwords/vim-twig'
 
 call vundle#end()           
@@ -158,9 +159,6 @@ nmap <silent> <F4> :call CreateTags()<CR><CR>
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-"active directory
-"cnoremap < expr > %%     getcmdtype() = = ':' ? expand('%: h').'/' : ''
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -193,8 +191,19 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" PHP Syntax Check
+" PHP Checking
 map <C-s> :!php -l %<CR>
+
+let g:phpqa_messdetector_ruleset = "~/repos/cc.xml"
+
+" PHP Mess Detector binary
+let g:phpqa_messdetector_cmd='/usr/bin/phpmd.phar'
+let g:phpqa_messdetector_autorun = 0
+
+
+" PHP Code Sniffer binary 
+let g:phpqa_codesniffer_cmd='/usr/bin/phpcs'
+let g:phpqa_codesniffer_autorun = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Substitution / Searching
@@ -212,8 +221,4 @@ function! HasPaste()
         return 'PASTE MODE  '
     en
     return ''
-endfunction
-
-function CreateTags()
-    exec ':!ctags -R -f tags.tags --fields=+aimS --languages=php'
 endfunction
