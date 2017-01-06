@@ -75,9 +75,30 @@ alias apachelog="clear;
                 sudo tail -20 /var/log/httpd/error_ssl.log"
 
 # unit testing
-alias test="phpunit --coverage-text --colors -c unittests/phpunit.xml unittests/"
+alias test="phpunit --coverage-text --colors -c unittests/phpunit.xml "
 alias test_html="phpunit --coverage-html ~/repos/coverage -c unittests/phpunit.xml unittests/"
 
+# masterbate
+alias masterbate="cd ~/repos/api-authz; git checkout master; git pull; sudo dev-link; 
+                  cd ~/repos/api-pathfinder-patient; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/app-auth; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/css-etl; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/css-gearman; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/api-config; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/api-pathfinder-platform; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/app-core; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/css-etl-api; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/database; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/gearman_workers; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/api-list; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/app-admin; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/app-mtmpath; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/css-etl-web; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/data-update; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/lib-mtm; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/utilities; git checkout master; git pull; sudo dev-link;
+                  cd ~/repos/www; git checkout master; git pull;
+                  "
 # powerline
 if [ -d "$HOME/.local/bin" ]; then
         PATH="$HOME/.local/bin:$PATH"

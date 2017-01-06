@@ -102,9 +102,6 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-" Show line numbers
-set number
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
