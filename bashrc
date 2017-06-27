@@ -30,6 +30,10 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+#etl aliases
+alias etl_files='sudo sftp -i /opt/css/css-etl/config/keys/css_sftp.pem testAccount@sftp2.internal.csshealth.com'
+alias qa_file='./bin/ingest --qa --file-id <file_id_from_list_source_checks> -d'
+
 #git aliases
 alias gs="git status"
 alias gc="git commit"
@@ -98,6 +102,7 @@ alias masterbate="cd ~/repos/api-authz; git checkout master; git pull; sudo dev-
                   cd ~/repos/lib-mtm; git checkout master; git pull; sudo dev-link;
                   cd ~/repos/utilities; git checkout master; git pull; sudo dev-link;
                   cd ~/repos/www; git checkout master; git pull;
+                  cd ~/repos; ctags -R --fields=+aimlS --languages=php;
                   "
 # powerline
 if [ -d "$HOME/.local/bin" ]; then

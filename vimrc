@@ -34,6 +34,7 @@ Bundle 'git://github.com/shawncplus/phpcomplete.vim'
 Bundle 'git://github.com/ervandew/supertab'
 Bundle 'git://github.com/scrooloose/nerdcommenter'
 Bundle 'git://github.com/joonty/vim-phpqa'
+Bundle 'git://github.com/powerline/powerline'
 Bundle 'beyondwords/vim-twig'
 
 call vundle#end()           
@@ -59,6 +60,8 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
+" Clipoard
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -150,9 +153,6 @@ map <leader>t<leader> :tabnext
 " Ctrlp mappings
 let g:ctrlp_map = '<c-p>'
  
-set tags=tags.tags
-nmap <silent> <F4> :call CreateTags()<CR><CR>
-
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -170,9 +170,9 @@ map <C-f> :NERDTreeToggle<CR>
 " Always show the status line
 set laststatus=2
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files
